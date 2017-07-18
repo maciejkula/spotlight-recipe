@@ -12,4 +12,4 @@ matrix:
 before_install:
   - ./.travis/install.sh
 install:
-  - PATH="$HOME/miniconda/bin:$PATH" conda build conda --channel=soumith
+  - PATH="$HOME/miniconda/bin:$PATH" conda build . --channel=soumith

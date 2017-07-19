@@ -20,6 +20,8 @@ requirements:
     - h5py
     - requests
     - pytorch 0.1.12
+  test:
+    - pytest
 
 about:
   home: https://github.com/maciejkula/spotlight

@@ -19,6 +19,7 @@ requirements:
     - scipy
     - h5py
     - requests
+    - scikit-learn
     - pytorch 0.1.12
 
 test:

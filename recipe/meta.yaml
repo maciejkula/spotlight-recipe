@@ -20,7 +20,9 @@ requirements:
     - h5py
     - requests
     - pytorch 0.1.12
-  test:
+
+test:
+  requires:
     - pytest
 
 about:

@@ -20,7 +20,7 @@ def run_tests():
     move = 'mv spotlight/tests tests/ && rm -rf spotlight'
     subprocess.check_call(move, shell=True)
 
-    subprocess.check_call(['py.test', 'tests/'])
+    subprocess.check_call(['py.test', '-v', 'tests/'])
 
     subprocess.check_call('rm -rf tests/', shell=True)
 

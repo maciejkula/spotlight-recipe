@@ -1,44 +1,70 @@
+#!/usr/bin/env python
 import os
+import shutil
 import subprocess
 
 
 def make_build_dir():
 
-    if not os.path.exists('build'):
-        os.mkdir('build')
+    if os.path.exists('./build'):
+        shutil.rmtree('./build')
+
+    os.mkdir('build')
+    os.mkdir('build/linux-64')
 
 
 def get_package_name(python):
 
     command = ['conda',
                'build',
-               #'--croot',
-               #'build',
+               '--channel',
+               'soumith',
                '--py',
                python,
                '--output',
-               '.']
+               'recipe']
 
-    return subprocess.check_output(command).decode('utf-8')
+    print(' '.join(command))
+    return (subprocess.check_output(command, env=os.environ)
+            .decode('utf-8').replace('\n', ''))
 
 
 def build(python):
 
     command = ['conda',
                'build',
-               #'--croot',
-               #'build',
+               '--channel',
+               'soumith',
                '--py',
                python,
-               '.']
+               'recipe']
 
-    subprocess.check_call(command)
+    print(' '.join(command))
+    subprocess.check_call(command, env=os.environ)
+
+
+def convert(name):
+
+    command = ['conda',
+               'convert',
+               '--platform',
+               'all',
+               '-o',
+               './build',
+               name]
+
+    shutil.copy(name, './build/linux-64')
+
+    print(' '.join(command))
+    subprocess.check_call(command, env=os.environ)
 
 
 if __name__ == '__main__':
 
     make_build_dir()
 
-    for python in ('2.7'):#, '3.5', '3.6'):
-        out_name = get_package_name(python)
+    for python in ('2.7', '3.5', '3.6'):
+
         build(python)
+        package_name = get_package_name(python)
+        convert(package_name)

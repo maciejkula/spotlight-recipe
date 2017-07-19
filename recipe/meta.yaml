@@ -3,8 +3,8 @@ package:
   version: "0.1.0"
 
 source:
-  git_rev: v0.1.0
   git_url: https://github.com/maciejkula/spotlight.git
+  git_rev: 091264d59599ec59c2bee91cd6d4ee519bf28ea4 # v0.1.0
 
 requirements:
   build:
@@ -17,10 +17,6 @@ requirements:
     - h5py
     - requests
     - pytorch 0.1.12
-
-test:
-  imports:
-    - spotlight
 
 about:
   home: https://github.com/maciejkula/spotlight

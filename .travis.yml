@@ -2,14 +2,9 @@ matrix:
   include:
     - os: linux
       language: generic
-      env: PYTHON_VERSION=2.7
-    - os: linux
-      language: generic
-      env: PYTHON_VERSION=3.5
-    - os: linux
-      language: generic
       env: PYTHON_VERSION=3.6
 before_install:
   - ./.travis/install.sh
+  - export PATH="$HOME/miniconda/bin:$PATH"
 install:
-  - PATH="$HOME/miniconda/bin:$PATH" conda build . --channel=soumith
+  - ./build.py

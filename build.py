@@ -40,7 +40,7 @@ def build(python):
                'recipe']
 
     print(' '.join(command))
-    subprocess.check_call(command, env=os.environ)
+    subprocess.check_call(' '.join(command), shell=True)
 
 
 def convert(name):

@@ -4,7 +4,7 @@ import subprocess
 import spotlight
 
 
-VERSION = getattr(spotlight, '__version__', 'v0.1.0')
+VERSION = getattr(spotlight, '__version__', 'v0.1.2')
 
 
 def run_tests():

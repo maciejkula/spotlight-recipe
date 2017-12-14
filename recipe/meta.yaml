@@ -15,7 +15,7 @@ requirements:
     - setuptools
   run:
     - python
-    - numpy
+    - numpy >=1.9
     - scipy
     - h5py
     - requests

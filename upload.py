@@ -10,6 +10,7 @@ def upload():
         print('Uploading {}...'.format(filename))
         subprocess.check_call(['anaconda',
                                'upload',
+                               '--force',
                                filename])
 
 

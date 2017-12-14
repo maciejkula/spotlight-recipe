@@ -3,5 +3,5 @@
 *.pyc
 *egg*
 *.cache
-*build*
+*build
 **/.ipynb_checkpoints/*

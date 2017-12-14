@@ -18,7 +18,7 @@ def get_package_name(python):
     command = ['conda',
                'build',
                '--channel',
-               'soumith',
+               'pytorch',
                '--py',
                python,
                '--output',
@@ -34,7 +34,7 @@ def build(python):
     command = ['conda',
                'build',
                '--channel',
-               'soumith',
+               'pytorch',
                '--py',
                python,
                'recipe']

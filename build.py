@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     make_build_dir()
 
-    for python in ('2.7', '3.5', '3.6'):
+    for python in ('2.7', '3.6', '3.7'):
 
         build(python)
         package_name = get_package_name(python)

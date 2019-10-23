@@ -20,7 +20,7 @@ requirements:
     - h5py
     - requests
     - scikit-learn
-    - pytorch 1.1.0
+    - pytorch >=1.1.0
 
 test:
   requires:
